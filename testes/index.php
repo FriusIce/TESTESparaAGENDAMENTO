@@ -1,4 +1,4 @@
-<!-- 
+
 <?php
 include 'db.php';
 
@@ -30,7 +30,7 @@ header('Content-Type: application/json');
 echo json_encode($professores);
 exit();
 ?>
--->
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
