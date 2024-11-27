@@ -1,3 +1,30 @@
+<?php
+include('conexao.php'); // Conexão com o banco de dados
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = $conexao->real_escape_string($_POST['nome']);
+    $email = $conexao->real_escape_string($_POST['email']);
+    $senha = md5($_POST['senha']); // Criptografa a senha
+
+    // Verifica se o email já existe no banco
+    $sql_check = "SELECT * FROM usuarios WHERE email = '$email'";
+    $result = $conexao->query($sql_check);
+
+    if ($result->num_rows > 0) {
+        $erro = "E-mail já está registrado!";
+    } else {
+        // Insere o novo usuário
+        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+        if ($conexao->query($sql) === TRUE) {
+            header("Location: Login.php?cadastro=sucesso"); // Redireciona após o cadastro
+            exit();
+        } else {
+            $erro = "Erro ao cadastrar: " . $conexao->error;
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,7 +38,7 @@
         <img class = "logo_secundaria" src="img/logo_header.png" alt="">
         <div class="conta">
             <p>Possui conta?</p>
-            <button class="btn1">Entrar</button>
+            <button class="btn1" onclick="window.location.href='Login.php'">Entrar</button>
         </div>
     </header>
     <form id = "form" onsubmit="return validarFormulario()">
@@ -49,7 +76,8 @@
             </button>
         </div>
     </form>
-
+    <?php if (isset($erro)) echo "<p style='color: red;'>$erro</p>"; ?>
+    
       <script>
         // Função para validar o formulário completo
         function validarFormulario() {
