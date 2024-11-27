@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (isset($_SESSION['email'])) {
+    header("Location: landingpage.html"); // Redireciona se já estiver logado
+    exit();
+}
+?>
+    
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
