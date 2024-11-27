@@ -1,0 +1,189 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.header .logo_secundaria {
+    height: 50px;
+}
+
+.header .conta p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.header .btn1 {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.header .btn1:hover {
+    background-color: #2980b9;
+}
+
+/* Filtragem */
+.filtragem {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#filters label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#filters input,
+#filters button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#filters button {
+    background-color: #27ae60;
+    color: #fff;
+    cursor: pointer;
+}
+
+#filters button:hover {
+    background-color: #219150;
+}
+
+/* Lista de professores */
+.elementosS {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+.elementosS .foto img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.elementosS .nomee h1,
+.elementosS .custoDIA h1 {
+    margin: 5px 0;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+.elementosS .sub1, .sub2, .sub3 {
+    margin: 5px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.elementosS .BUTAO {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.elementosS .BUTAO:hover {
+    background-color: #2980b9;
+}
+
+/* Modal */
+.janela-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.janela-modal .modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.janela-modal .modal h1 {
+    color: #2c3e50;
+}
+
+.janela-modal .modal button {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.janela-modal .modal button:hover {
+    background-color: #219150;
+}
+
+.janela-modal .fechar {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.janela-modal .fechar:hover {
+    background-color: #c0392b;
+}

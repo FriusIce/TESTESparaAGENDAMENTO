@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    font-family: 'Josefin Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: #fc7fb6
+}
+
+.header {
+    background-color: #fc7fb6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0%;
+  
+    .conta {
+        display: flex;
+        gap: 5%;
+        top: 3%;
+        color: white;
+        font-size: 25px;
+    }
+
+    .btn1 {
+        background-color: white;
+        width: 90%;
+        border-radius: 10px;
+        border-color:  #fc7fb6;
+        cursor: pointer;
+        font-size: 25px;
+        color: #fc7fb6;
+    }
+
+    .logo_secundaria {
+        width: 10%;
+    }
+}
+
+
+#form {
+    position: relative;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #ffff;
+    border-radius: 10px;
+    padding: 65px;
+    width: min-content;
+    align-items: center;
+    color: #fc7fb6;
+}
+
+.titulo {
+    text-align: center;
+    color: #fc7fb6;
+}
+
+.inputuser {
+    background-color: none;
+    border-radius: 22px;
+    font-size: 15px;
+    width: 220px;
+    border: 2px #fc7fb6 solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+    color: #fc7fb6;
+}
+
+   
+
+.btn {
+    background-color: #fc7fb6 ;
+    color: white;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#btn :hover{
+    background: #b35980;
+}
+
+.labelinput {
+    color: #fc7fb6;
+}
+
+
+@media screen and (max-width: 400px) {
+
+    
+.header {
+    padding-top: 5%;
+    background-color: #fc7fb6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  
+    .conta {
+        display: flex;
+        gap: 5px;
+        color: white;
+        font-size: 15px;
+    }
+
+    .btn1 {
+        background-color: #fc7fb6;
+        width: 100%;
+        border-radius: 10px;
+        border-color:  white;
+        cursor: pointer;
+        font-size: 25px;
+        color: white;
+    }
+
+    .logo_secundaria {
+        display: none;
+    }
+}
+
+    
+}
