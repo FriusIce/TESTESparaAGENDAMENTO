@@ -1,3 +1,24 @@
+<?php
+session_start();
+include('conexao.php');
+
+if (isset($_POST['email']) && isset($_POST['senha'])) {
+    $email = $conexao->real_escape_string($_POST['email']);
+    $senha = md5($_POST['senha']); // Criptografa a senha para comparar com o banco
+
+    $sql = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+    $result = $conexao->query($sql);
+
+    if ($result->num_rows > 0) {
+        $_SESSION['email'] = $email; // Define a sessão
+        header("Location: agendas.php"); // Redireciona para a página restrita
+        exit();
+    } else {
+        $erro = "Usuário ou senha inválidos!";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,7 +32,7 @@
         <img class = "logo_secundaria" src="img/logo_header.png" alt="">
         <div class="conta">
             <p>Não possui conta?</p>
-            <button type="submit" class="btn1">
+            <button type="submit" class="btn1" onclick="window.location.href='cadastro.php'">
                 Cadastre-se
             </button>
         </div>
@@ -22,8 +43,8 @@
         </div>
         <br><br>
         <div class="inputbox">
-            <label for="nome" class="labelinput">Usuário:</label>
-            <input type="text" name="nome" id="nome" class="inputuser">
+            <label for="email" class="labelinput">Email:</label>
+            <input type="email" name="email" id="email" class="inputuser">
         </div>
         <br>
         <br>
