@@ -18,7 +18,7 @@ if (isset($_SESSION['email'])) {
         <img class = "logo_secundaria" src="img/logo_header.png" alt="">
         <div class="conta">
             <p>Possui conta?</p>
-            <button class="btn1">Entrar</button>
+            <button class="btn1" onclick="window.location.href='../perfil/perfil.php'">Entrar</button>
         </div>
     </header>
     <h1>Agendamento Legal</h1>
@@ -138,17 +138,12 @@ if (isset($_SESSION['email'])) {
 <div class="janela-modal" id="janela-modal">
     <div class="modal">
         <button class="fechar" id="fechar">X</button>
-        <h1>Registre-se para continuar</h1>
+        <h1>Converse ou pague-o:</h1>
         <br>
         <br>
         <br>
-        <p>Nossa site pede para fazer isso,</p>
-        <p>tanto para contrato como para mensagem.</p>
-        <br>
-        <br>
-        <br>
-        <button>Registrar</button>
-        <button>Logar</button>
+        <button onclick="window.location.href='../Chat/index.html'">Chat</button>
+        <button>Pagar</button>
     </div>
 
     <script src="scripts.js"></script>
